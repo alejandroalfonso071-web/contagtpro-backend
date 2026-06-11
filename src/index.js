@@ -42,6 +42,8 @@ function requireApiKey(req, res, next) {
 
 app.use("/health",       healthRoutes);
 app.use("/api/auth",     authRoutes);
+const clientesRoutes = require("./routes/clientes");
+app.use("/api/clientes", clientesRoutes);
 app.use("/api/admin",    requireApiKey, adminRoutes);
 app.use("/api/nit",      requireApiKey, nitRoutes);
 app.use("/api/fel",      requireApiKey, felRoutes);
